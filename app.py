@@ -14,7 +14,6 @@ if os.path.isfile('save.txt'):
 
 
 def addapp():
-
     for widget in frame.winfo_children():
         widget.destroy()
 
@@ -32,6 +31,13 @@ def runapps():
         os.startfile(APP)
 
 
+def deleteapps():
+    if os.path.exists("save.txt"):
+        os.remove("save.txt")
+        a = []
+        exit()
+
+
 canvas = tk.Canvas(root, height=700, width=700, bg="#263D42")
 canvas.pack()
 
@@ -46,13 +52,15 @@ runApps = tk.Button(root, text="Run Apps", padx=25,
                     pady=10, fg='white', bg="#263D42", command=runapps)
 runApps.pack()
 
+deleteapps = tk.Button(root, text="Delete Apps", padx=25,
+                       pady=10, fg='white', bg="#263D42", command=deleteapps)
+deleteapps.pack()
+
 for app in apps:
     label = tk.Label(frame, text=app)
     label.pack()
 
-
 root.mainloop()
-
 
 with open('save.txt', 'w') as f:
     for app in apps:
