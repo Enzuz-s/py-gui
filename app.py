@@ -4,9 +4,10 @@ from tkinter import filedialog
 
 root = tk.Tk()
 apps = []
+save = 'save.txt'
 
-if os.path.isfile('save.txt'):
-    with open('save.txt', 'r') as f:
+if os.path.isfile(save):
+    with open(save, 'r') as f:
         tempApps = f.read()
         tempApps = tempApps.split(',')
         apps = [x for x in tempApps if x.strip()]
@@ -21,20 +22,19 @@ def addapp():
         initialdir="/", title="Select file", filetypes=(("executables", "*.exe"), ("all files", "*.*")))
     apps.append(filename)
     print(apps)
-    for APP in apps:
-        bel = tk.Label(frame, text=APP, bg="gray")
+    for app in apps:
+        bel = tk.Label(frame, text=app, bg="gray")
         bel.pack()
 
 
 def runapps():
-    for APP in apps:
-        os.startfile(APP)
+    for app in apps:
+        os.startfile(app)
 
 
 def deleteapps():
     if os.path.exists("save.txt"):
         os.remove("save.txt")
-        a = []
         exit()
 
 
@@ -62,6 +62,6 @@ for app in apps:
 
 root.mainloop()
 
-with open('save.txt', 'w') as f:
+with open(save, 'w') as f:
     for app in apps:
         f.write(app + ',')
