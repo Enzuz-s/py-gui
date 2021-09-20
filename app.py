@@ -44,19 +44,19 @@ def addapp():
         bel.pack()
 
 
-#def open_win():
- #   global top
-  #  top = Toplevel(root)
-   # Label(top, text="Manual for operator", font=('Helvetica 14 bold')).pack()
-    #canvas = tk.Canvas(top, height=520, width=480, bg="#263D42", cursor='crosshair')
-    #canvas.pack(expand=False)
+# def open_win():
+#   global top
+#  top = Toplevel(root)
+# Label(top, text="Manual for operator", font=('Helvetica 14 bold')).pack()
+# canvas = tk.Canvas(top, height=520, width=480, bg="#263D42", cursor='crosshair')
+# canvas.pack(expand=False)
 
-    #frame = tk.Frame(top, bg="white")
-    #frame.place(relx=0.06, rely=0.10, relwidth=0.9, relheight=0.6)
+# frame = tk.Frame(top, bg="white")
+# frame.place(relx=0.06, rely=0.10, relwidth=0.9, relheight=0.6)
 
-   # closeWin = tk.Button(top, text="Close", padx=35, fg='white', bg="#263D42", command=close_newapps)
-   # closeWin.pack()
-   # top.grab_set()
+# closeWin = tk.Button(top, text="Close", padx=35, fg='white', bg="#263D42", command=close_newapps)
+# closeWin.pack()
+# top.grab_set()
 
 
 def runapps():
@@ -75,9 +75,9 @@ def deleteapps():
         exit()
 
 
-#def close_newapps():
-   # print("PopWin closed by customer")
-   # top.destroy()
+# def close_newapps():
+# print("PopWin closed by customer")
+# top.destroy()
 
 
 canvas = tk.Canvas(root, height=520, width=480, bg="#263D42", cursor='crosshair')
@@ -94,9 +94,9 @@ runApps = tk.Button(root, text="Run Apps", padx=32,
                     pady=10, fg='white', bg="#263D42", command=runapps)
 runApps.pack()
 
-#open_window = tk.Button(root, text="New window", padx=23,
-                  #      fg='white', bg="#263D42", command=open_win)
-#open_window.pack()
+# open_window = tk.Button(root, text="New window", padx=23,
+#      fg='white', bg="#263D42", command=open_win)
+# open_window.pack()
 
 deleteapps = tk.Button(root, text="Delete Apps", padx=25,
                        pady=10, fg='white', bg="#263D42", command=deleteapps)
